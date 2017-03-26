@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @description            Enemy class => objects the player should avoid
  * @constructor

@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @description        Player class
  * @constructor
@@ -14,26 +16,24 @@ var Player = function (x, y) {
 
 /**
  * @description               Restrict player position to the gameBoard bounds
- * @param  {number}   dt      Time delta between the previous and actual frame
  * @param  {[type]}   bounds  Gameboard bounds
  */
-Player.prototype.update = function (dt, bounds) {
+Player.prototype.update = function (bounds) {
 
-    var outOfRightBound = this.x < bounds.right,
-        outOfLeftBound = this.x > bounds.right,
-        outOfTopBound = this.y < bounds.top,
-        outOfBottomBound = this.y > bounds.bottom;
-
-    if (outOfRightBound) {
+    // out of rightBound
+    if (this.x < bounds.right) {
         this.x = bounds.right;
     }
-    if (outOfLeftBound) {
+    // out of leftBound
+    if (this.x > bounds.right) {
         this.x = bounds.left;
     }
-    if (outOfTopBound) {
+    // out of topBound
+    if (this.y < bounds.top) {
         this.y = bounds.bottom;
     }
-    if (outOfBottomBound) {
+    // out of bottomBound
+    if (this.y > bounds.bottom) {
         this.y = bounds.top;
     }
 
