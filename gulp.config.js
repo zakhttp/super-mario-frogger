@@ -1,6 +1,13 @@
 var wiredep = require('wiredep');
 
-var js = [],
+var js = [
+        './src/js/config.js',
+        './src/js/resources.js',
+        './src/js/Enemy.js',
+        './src/js/Player.js',
+        './src/js/engine.js',
+        './src/js/*.js'
+    ],
     test = ['./test/**/*.js'],
     bowerFiles = wiredep({
         devDependencies: true
