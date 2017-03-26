@@ -16,7 +16,7 @@ var Player = function (x, y) {
 
 /**
  * @description               Restrict player position to the gameBoard bounds
- * @param  {[type]}   bounds  Gameboard bounds
+ * @param  {object}   bounds  Gameboard bounds
  */
 Player.prototype.update = function (bounds) {
 
