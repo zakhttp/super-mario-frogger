@@ -1,0 +1,27 @@
+{
+  "name": "super-mario-frogger",
+  "description": "reproduction of frogger arcade gamw with a super mario bros. flavour",
+  "main": "",
+  "authors": [
+    "zakhttp"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "super",
+    "mario",
+    "frogger",
+    "udacity"
+  ],
+  "homepage": "https://github.com/zakhttp/super-mario-frogger",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+}
