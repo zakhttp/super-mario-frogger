@@ -1,5 +1,5 @@
 /**
- * @description Game         configuration object
+ * @description Game         Configuration object
  * @return {object}  config  Object containing the game settings
  */
 var config = (function () {
