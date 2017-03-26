@@ -21,20 +21,20 @@ var Player = function (x, y) {
 Player.prototype.update = function (bounds) {
 
     // out of rightBound
-    if (this.x < bounds.right) {
+    if (this.x > bounds.right) {
         this.x = bounds.right;
     }
     // out of leftBound
-    if (this.x > bounds.right) {
+    if (this.x < bounds.left) {
         this.x = bounds.left;
     }
     // out of topBound
     if (this.y < bounds.top) {
-        this.y = bounds.bottom;
+        this.y = bounds.top;
     }
     // out of bottomBound
     if (this.y > bounds.bottom) {
-        this.y = bounds.top;
+        this.y = bounds.bottom;
     }
 
 };
@@ -70,6 +70,6 @@ Player.prototype.handleInputKey = function (keyCode, playerStep) {
 /**
  * @descritpion Render the player object
  */
-Player.prototype.render = function () {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+Player.prototype.render = function (context) {
+    context.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
