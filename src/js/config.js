@@ -13,9 +13,9 @@ var config = (function () {
         },
         rowHeight: 101,
         colWidth: 101,
-        numRows: 8,
-        numCols: 8,
-        colImages: [
+        rows: 8,
+        cols: 8,
+        tiles: [
             'images/plain-sky-block.png',
             'images/bridge-block.png',
             'images/bridge-block.png',
