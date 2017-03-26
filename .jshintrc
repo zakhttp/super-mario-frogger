@@ -65,7 +65,7 @@
 
         /* Super Mario Frogger */
         "Resources": true,
-        "ctx": true,
+        "engine": true,
         "config": true
 
 
