@@ -5,6 +5,7 @@
 var config = (function () {
     'use strict';
     var config = {
+        gameContainerElement: '.game-container',
         bounds: {
             top: 121,
             right: 780, //808-28
@@ -15,6 +16,7 @@ var config = (function () {
         colWidth: 101,
         rows: 8,
         cols: 8,
+        splashScreen: 'images/splash.jpg',
         tiles: [
             'images/plain-sky-block.png',
             'images/bridge-block.png',
@@ -25,7 +27,9 @@ var config = (function () {
             'images/ground-block.png',
             'images/plain-ground-block.png'
         ],
-        assets: ['images/plain-sky-block.png',
+        assets: [
+            'images/splash.jpg',
+            'images/plain-sky-block.png',
             'images/sky-block.png',
             'images/bridge-block.png',
             'images/ground-block.png',
