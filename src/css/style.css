@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'pixel-emulator';
+    src: url(./../fonts/Pixel-Emulator.otf);
+}
+
+canvas{
+  display: block;
+  margin: 0 auto;
+}
