@@ -25,6 +25,19 @@ var config = (function () {
             'images/ground-block.png',
             'images/plain-ground-block.png'
         ],
+        assets: ['images/plain-sky-block.png',
+            'images/sky-block.png',
+            'images/bridge-block.png',
+            'images/ground-block.png',
+            'images/plain-ground-block.png',
+            'images/goomba.png',
+            'images/mario-right.png',
+            'images/mario-left.png',
+            'images/small-cloud.png',
+            'images/big-cloud.png',
+            'images/big-coin.png',
+            'images/small-coin.png'
+        ],
         playerStep: {
             x: 25,
             y: 101
