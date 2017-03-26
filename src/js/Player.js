@@ -68,7 +68,8 @@ Player.prototype.handleInputKey = function (keyCode, playerStep) {
 };
 
 /**
- * @descritpion Render the player object
+ * @descritpion               Render the player object
+ * @param  {[type]}  context  The context to attach the player to
  */
 Player.prototype.render = function (context) {
     context.drawImage(Resources.get(this.sprite), this.x, this.y);
