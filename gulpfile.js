@@ -191,6 +191,7 @@ gulp.task('build', ['lib', 'scripts', 'test', 'styles', 'images', 'fonts', 'inje
 
 gulp.task('serve', ['build'], function () {
     log('Serving the project in the browser');
+    gulp.watch(config.index, ['inject']);
     gulp.watch(config.js, ['scripts', 'test', 'inject']);
     gulp.watch(config.test, ['test']);
     gulp.watch(config.bowerDir, ['lib', 'inject']);
