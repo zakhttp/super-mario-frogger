@@ -89,7 +89,6 @@ InfoModal.prototype.render = function (context) {
     }
 
     // Draw the background overlay
-    console.log(overlayBg);
     context.fillStyle = overlayBg;
     context.fillRect(overlayX1, overlayY1, overlayX2, overlayY2);
 
