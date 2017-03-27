@@ -4,6 +4,14 @@
  */
 var config = (function () {
     'use strict';
+
+    var cols = 8,
+        rows = 8,
+        colWidth = 101,
+        rowHeight = 101,
+        width =  cols * colWidth,
+        height =  rows * rowHeight;
+
     var config = {
         gameContainerElement: '.game-container',
         bounds: {
@@ -12,11 +20,61 @@ var config = (function () {
             bottom: 625,
             left: 0
         },
-        rowHeight: 101,
-        colWidth: 101,
-        rows: 8,
-        cols: 8,
+        rowHeight: rowHeight,
+        colWidth: colWidth,
+        rows: rows,
+        cols: cols,
+        width: width,
+        height: height,
         splashScreen: 'images/splash.jpg',
+        infoModal: {
+            bg: {
+                position: {
+                    x1: 0,
+                    y1: 0,
+                    x2: width,
+                    y2: height
+                }
+            },
+            overlay: {
+                bgColor: 'rgba(0, 0, 0, 0.6)',
+                position: {
+                    x1: 50,
+                    y1: height - 550,
+                    x2: width - 100,
+                    y2: height - 500
+                }
+            },
+            title: {
+                text: 'super mario frogger',
+                color: '#bd312e',
+                fontSize: '30px',
+                position: {
+                    x1: 100,
+                    y1: height - 450
+                }
+            },
+            callToAction: {
+                text: 'press any key to start...',
+                color: '#bbbbbb',
+                fontSize: '18px',
+                position: {
+                    x1: 100,
+                    y1: height - 350
+                }
+            },
+            body: {
+                text: [
+                    'How to play? Use the keyboard arrows up/down/left/right to move around.'
+                ],
+                color: '#bbbbbb',
+                fontSize: '11px',
+                position: {
+                    x1: 100,
+                    y1: height - 400
+                }
+            }
+        },
         tiles: [
             'images/plain-sky-block.png',
             'images/bridge-block.png',

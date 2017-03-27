@@ -3,6 +3,7 @@ var wiredep = require('wiredep');
 var js = [
         './src/js/config.js',
         './src/js/resources.js',
+        './src/js/InfoModal.js',
         './src/js/Enemy.js',
         './src/js/Player.js',
         './src/js/engine.js',
