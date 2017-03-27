@@ -3,7 +3,21 @@
     src: url(./../fonts/Pixel-Emulator.otf);
 }
 
-canvas{
-  display: block;
-  margin: 0 auto;
+canvas {
+    display: block;
+    margin: 50px auto;
+}
+
+body {
+    background-color: #a94442;
+    font-family: pixel-emulator;
+}
+
+.game-container {
+    position: relative;
+    background-color: #a94442;
+}
+
+.shadow {
+	box-shadow: 0px 2px 10px 1px #333;
 }
