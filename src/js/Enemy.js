@@ -34,7 +34,7 @@ Enemy.prototype.update = function (dt, bounds) {
 };
 
 /**
- * @descritpion               Render the enemy object
+ * @descritpion               Render an enemy object
  * @param  {object}  context  Context to use to draw the enemy
  */
 Enemy.prototype.render = function (context) {
