@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * @description            Enemy class: objects the player should avoid
+ * @description            Enemy class => objects the player should avoid
  * @constructor
  * @param {number}  x      position of the enemy on the 'x' axis
  * @param {number}  y      position of the enemy on the 'y' axis
@@ -23,11 +23,11 @@ var Enemy = function (x, y, speed) {
  */
 Enemy.prototype.update = function (dt, bounds) {
 
-    // Restrict the enemy back and forth mouvement to the bound of the screen
-    this.speed = this.x < bounds.right - 10 &&  this.x > bounds.left + 10 ? this.speed : -this.speed;
-
-    // Move the enemy accross the screen back and forth
     this.x += this.speed * dt;
+    // Return the enemy object to the left bound once they cross the right bound
+    if (this.x > (bounds.right + 100)) { //TODO: provide the game bounds
+        this.x = bounds.left;
+    }
 
 };
 
