@@ -7,11 +7,11 @@
  * @param {number}  y      position of the enemy on the 'y' axis
  * @param {number}  speed  speed factor of the enemy
  */
-var Enemy = function (x, y, speed) {
+var Enemy = function (x, y, speed, speedRatio, rowHeight) {
 
     this.x = x;
-    this.y = y; // TODO: update y = (y * rowHeight) + (0.5 * rowHeight) + 73
-    this.speed = speed; // TODO: update speed =  * speedRatio
+    this.y = y = (y * rowHeight) + (0.5 * rowHeight) + 73;
+    this.speed = speed * speedRatio;
     this.sprite = 'images/goomba.png'; //TODO: remove hard coded sprite
 
 };
