@@ -7,7 +7,8 @@ var engine = (function (config) {
         lastTime;
 
     var canvas = createCanvas(width, height),
-        context = createContext(canvas);
+        context = createContext(canvas),
+        gameContainer = document.querySelector($.gameContainerElement);
 
     /**
      * @description  Initialize the game engine
@@ -15,8 +16,8 @@ var engine = (function (config) {
     function init() {
 
         mountCanvas(canvas);
+        showSplashscreen(context);
         lastTime = Date.now();
-        loop();
 
     }
 
@@ -59,10 +60,16 @@ var engine = (function (config) {
      */
     function update(dt) {
 
-        // update
         player.update($.bounds);
+        allEnemies.forEach(function(enemy) {
+            enemy.update(dt, $.bounds);
+        });
+        allClouds.forEach(function(cloud) {
+            cloud.update(dt, $.bounds);
+        });
 
     }
+
 
     /**
      * @description  Render the game board & game entities
@@ -70,6 +77,17 @@ var engine = (function (config) {
     function render() {
 
         renderGameBoard(context);
+
+        allCoins.forEach(function(coin) {
+            coin.render(context);
+        });
+
+        allClouds.forEach(function(cloud) {
+            cloud.render(context);
+        });
+        allEnemies.forEach(function(enemy) {
+            enemy.render(context);
+        });
         player.render(context); // TODO define entities and playe container
 
     }
@@ -85,6 +103,7 @@ var engine = (function (config) {
         var canvas = document.createElement('canvas');
         canvas.width = width;
         canvas.height = height;
+        canvas.className = 'shadow';
         return canvas;
 
     }
@@ -103,7 +122,7 @@ var engine = (function (config) {
      * @param  {object}  canvas  The game board canvas object
      */
     function mountCanvas(canvas) {
-        document.body.appendChild(canvas);
+        gameContainer.appendChild(canvas);
     }
 
     /**
@@ -112,7 +131,6 @@ var engine = (function (config) {
      */
     function renderGameBoard(context) {
 
-        console.log('Populating the game board...');
         var row, col;
         for (row = 0; row < $.rows; row++) {
             for (col = 0; col < $.cols; col++) {
@@ -120,6 +138,21 @@ var engine = (function (config) {
                 context.drawImage(tile, col * $.colWidth, row * $.rowHeight);
             }
         }
+
+    }
+
+    /**
+     * @description               Displays the splash screen of the game
+     * @param  {object}  context  The context oof the game board canvas
+     */
+    function showSplashscreen(context) {
+
+        var splashScreen = new InfoModal(
+            config.splashScreen,
+            config.infoModal,
+            loop
+        );
+        splashScreen.render(context);
 
     }
 
