@@ -23,19 +23,19 @@ var Enemy = function (x, y, speed) {
  */
 Enemy.prototype.update = function (dt, bounds) {
 
+    // Restrict the enemy back and forth mouvement to the bound of the screen
+    this.speed = this.x < bounds.right &&  this.x > bounds.left ? this.speed : -this.speed;
+
+    // Move the enemy accross the screen back and forth
     this.x += this.speed * dt;
-    // Return the enemy object to the left bound once they cross the right bound
-    if (this.x > (bounds.right + 100)) { //TODO: provide the game bounds
-        this.x = bounds.left;
-    }
 
 };
 
 /**
  * @descritpion Render the enemy object
  */
-Enemy.prototype.render = function () {
+Enemy.prototype.render = function (context) {
 
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    context.drawImage(Resources.get(this.sprite), this.x, this.y);
 
 };
