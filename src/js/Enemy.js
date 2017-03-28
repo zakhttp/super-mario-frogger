@@ -1,11 +1,13 @@
 'use strict';
 
 /**
- * @description            Enemy class => objects the player should avoid
+ * @description                 Objects the player should avoid
  * @constructor
- * @param {number}  x      position of the enemy on the 'x' axis
- * @param {number}  y      position of the enemy on the 'y' axis
- * @param {number}  speed  speed factor of the enemy
+ * @param {number}  x           position of the enemy on the 'x' axis
+ * @param {number}  y           position of the enemy on the 'y' axis
+ * @param {number}  speed       speed factor of the enemy
+ * @param {number}  speedRatio  Speed ratio of the cloud
+ * @param {number}  rowHeight   Height of each row of the game board
  */
 var Enemy = function (x, y, speed, speedRatio, rowHeight) {
 
@@ -17,7 +19,7 @@ var Enemy = function (x, y, speed, speedRatio, rowHeight) {
 };
 
 /**
- * @description             Move the enemy accross the gameBord
+ * @description              Move the enemy accross the gameBord
  * @param  {number}  dt      Time delta between the previous and actual frame
  * @param  {object}  bounds  Gameboard bounds
  */
@@ -32,7 +34,8 @@ Enemy.prototype.update = function (dt, bounds) {
 };
 
 /**
- * @descritpion Render the enemy object
+ * @descritpion               Render the enemy object
+ * @param  {object}  context  Context to use to draw the enemy
  */
 Enemy.prototype.render = function (context) {
 
