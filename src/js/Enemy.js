@@ -24,7 +24,7 @@ var Enemy = function (x, y, speed) {
 Enemy.prototype.update = function (dt, bounds) {
 
     // Restrict the enemy back and forth mouvement to the bound of the screen
-    this.speed = this.x < bounds.right &&  this.x > bounds.left ? this.speed : -this.speed;
+    this.speed = this.x < bounds.right - 10 &&  this.x > bounds.left + 10 ? this.speed : -this.speed;
 
     // Move the enemy accross the screen back and forth
     this.x += this.speed * dt;
