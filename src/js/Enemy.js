@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * @description            Enemy class => objects the player should avoid
+ * @description            Enemy class: objects the player should avoid
  * @constructor
  * @param {number}  x      position of the enemy on the 'x' axis
  * @param {number}  y      position of the enemy on the 'y' axis
