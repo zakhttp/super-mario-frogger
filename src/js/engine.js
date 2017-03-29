@@ -76,6 +76,7 @@ var engine = (function (config) {
             if (hasCollided(game.player, enemy)) {
                 // Send the player to the predefined bottom bound in case of collision with an enemy
                 game.player.y = $.bounds.bottom;
+                console.log('Oups! Collision with a goomba vehicle!')
             }
         });
         game.allCoins.forEach(function(coin) {
@@ -86,6 +87,8 @@ var engine = (function (config) {
                 game.dash.coins++;
                 // Increment with 100 the score value of the game board
                 game.dash.score += 100;
+
+                console.log('Yupi... to cashflow!')
             }
         });
     }
