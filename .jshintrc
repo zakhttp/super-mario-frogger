@@ -68,8 +68,12 @@
         "engine": true,
         "config": true,
         "InfoModal": true,
-        "player": true
-
+        "Player": true,
+        "Coin": true,
+        "Cloud": true,
+        "Dash": true,
+        "Enemy": true,
+        "game": true
 
     }
 

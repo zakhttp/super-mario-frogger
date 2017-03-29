@@ -60,11 +60,11 @@ var engine = (function (config) {
      */
     function update(dt) {
 
-        player.update($.bounds);
-        allEnemies.forEach(function(enemy) {
+        game.player.update($.bounds);
+        game.allEnemies.forEach(function(enemy) {
             enemy.update(dt, $.bounds);
         });
-        allClouds.forEach(function(cloud) {
+        game.allClouds.forEach(function(cloud) {
             cloud.update(dt, $.bounds);
         });
         monitorCollisions();
@@ -72,20 +72,20 @@ var engine = (function (config) {
     }
 
     function monitorCollisions () {
-        allEnemies.forEach(function(enemy) {
-            if (hasCollided(player, enemy)) {
+        game.allEnemies.forEach(function(enemy) {
+            if (hasCollided(game.player, enemy)) {
                 // Send the player to the predefined bottom bound in case of collision with an enemy
-                player.y = $.bounds.bottom;
+                game.player.y = $.bounds.bottom;
             }
         });
-        allCoins.forEach(function(coin) {
-            if (hasCollided(player, coin)) {
+        game.allCoins.forEach(function(coin) {
+            if (hasCollided(game.player, coin)) {
                 // Remove the coin object froom the coins array in case of collision with the player
-                allCoins.splice(allCoins.indexOf(coin), 1);
+                game.allCoins.splice(game.allCoins.indexOf(coin), 1);
                 //
-                dash.coins++;
+                game.dash.coins++;
                 // Increment with 100 the score value of the game board
-                dash.score += 100;
+                game.dash.score += 100;
             }
         });
     }
@@ -107,19 +107,19 @@ var engine = (function (config) {
 
         renderGameBoard(context);
 
-        allCoins.forEach(function(coin) {
+        game.allCoins.forEach(function(coin) {
             coin.render(context);
         });
 
-        allClouds.forEach(function(cloud) {
+        game.allClouds.forEach(function(cloud) {
             cloud.render(context);
         });
-        allEnemies.forEach(function(enemy) {
+        game.allEnemies.forEach(function(enemy) {
             enemy.render(context);
         });
-        player.render(context); // TODO define entities and playe container
+        game.player.render(context); // TODO define entities and playe container
 
-        dash.render(context);
+        game.dash.render(context);
 
     }
 
@@ -188,45 +188,13 @@ var engine = (function (config) {
     }
 
     /**
-     * @description               Displays the victory screen of the game
-     * @param  {object}  context  The context oof the game board canvas
-     */
-    function showVictoryscreen() {
-
-        var victoryScreen = new InfoModal(
-            config.victoryScreen,
-            config.infoModal,
-            init
-        );
-        victoryScreen.render(context);
-
-    }
-
-    /**
-     * @description               Displays the game over screen of the game
-     * @param  {object}  context  The context oof the game board canvas
-     */
-    function showGameOverscreen(context) {
-
-        var gameOverScreen = new InfoModal(
-            config.gameOverScreen,
-            config.infoModal,
-            init
-        );
-        gameOverScreen.render(context);
-
-    }
-
-    /**
      * Public API of the engine
      * @type {Object}
      */
     var engine = {
 
         start: start,
-        context: context,
-        victory: showVictoryscreen,
-        gameOver: showGameOverscreen
+        context: context
 
     };
 
