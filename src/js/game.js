@@ -12,7 +12,26 @@ game.dash = new Dash();
 
 // Array of enemies the player should avoid
 game.allEnemies = [
-    new Enemy(0, 1, 10, config.speedRatio, config.rowHeight)
+    // 2nd row
+    new Enemy(400, 1, 30, config.speedRatio, config.rowHeight),
+    new Enemy(200, 1, 40, config.speedRatio, config.rowHeight),
+    new Enemy(300, 1, 90, config.speedRatio, config.rowHeight),
+    new Enemy(500, 1, 50, config.speedRatio, config.rowHeight),
+    new Enemy(800, 1, 60, config.speedRatio, config.rowHeight),
+    // 3rd row
+    new Enemy(0, 2, 40, config.speedRatio, config.rowHeight),
+    new Enemy(600, 2, 40, config.speedRatio, config.rowHeight),
+    new Enemy(700, 2, 40, config.speedRatio, config.rowHeight),
+    new Enemy(800, 2, 40, config.speedRatio, config.rowHeight),
+    // 4th row
+    new Enemy(0, 3, 30, config.speedRatio, config.rowHeight),
+    new Enemy(200, 3, 30, config.speedRatio, config.rowHeight),
+    new Enemy(400, 3, 30, config.speedRatio, config.rowHeight),
+    new Enemy(600, 3, 30, config.speedRatio, config.rowHeight),
+    // 5th row
+    new Enemy(100, 4, 20, config.speedRatio, config.rowHeight),
+    new Enemy(450, 4, 20, config.speedRatio, config.rowHeight),
+    new Enemy(700, 4, 20, config.speedRatio, config.rowHeight),
 
 ];
 
@@ -29,11 +48,11 @@ game.allCoins = (function() {
 
 // Array of clouds that traverse the background of the gameboard
 game.allClouds = [
-    new Cloud(0, 2, 1, config.speedRatio, config.rowHeight),
-    new Cloud(-800, 3, 2, config.speedRatio, config.rowHeight),
-    new Cloud(-600, 1, 3, config.speedRatio, config.rowHeight),
-    new Cloud(-100, 4, 5, config.speedRatio, config.rowHeight),
-    new Cloud(-100, 2, 1, config.speedRatio, config.rowHeight),
+    new Cloud(0, 2, 4, config.speedRatio, config.rowHeight),
+    new Cloud(-100, 3, 2, config.speedRatio, config.rowHeight),
+    new Cloud(0, 1, 3, config.speedRatio, config.rowHeight),
+    new Cloud(-200, 4, 5, config.speedRatio, config.rowHeight),
+    new Cloud(300, 2, 1, config.speedRatio, config.rowHeight),
 ];
 
 // Handle keyboard events for moving the player around

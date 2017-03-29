@@ -63,14 +63,14 @@ var config = (function () {
         ],
         // Player mouvement steps in pixels
         playerStep: {
-            x: 25,
+            x: 20,
             y: 101
         },
         /* Enemies speed ratio to fine-tune the speed*/
         speedRatio: 10,
         collisionTolerance: {
-            x: 30,
-            y: 30,
+            x: 20,
+            y: 20,
         },
         // Splashscreen background image
         splashScreen: 'images/splash.jpg',
