@@ -88,7 +88,7 @@ var engine = (function (config) {
                 // Increment with 100 the score value of the game board
                 game.dash.score += 100;
 
-                console.log('Yupi... to cashflow!')
+                console.log('Yupi... cashflow: ' + game.dash.coins + ' $!')
             }
         });
     }
