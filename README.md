@@ -30,8 +30,6 @@ You should collect as many coins as possible while trying to make it to the top 
 
 Be careful Goombas are nasty, try to avoid them!
 
-Then open [the index ](https://github.com/zakhttp/super-mario-frogger/blob/super-mario/index.html) file in the browser.
-
 The game engine is contained within [the engine ](https://github.com/zakhttp/super-mario-frogger/blob/super-mario/js/engine.js) file, it can be used as a standalone game loop for different game ideas.
 
 The project uses an image loading and caching utility that can be found in [resources.js ](https://github.com/zakhttp/super-mario-frogger/blob/super-mario/js/resources.js) .
