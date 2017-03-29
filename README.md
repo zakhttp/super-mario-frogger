@@ -1,12 +1,34 @@
 # Super Mario Frogger game
 This a reproduction of the 80's frogger game with a Super Mario Bros flavor.
 
-![screenshot of the super mario frogger game][logo]
+![screenshot of the super mario frogger game][splash]
+![screenshot of the super mario frogger game][game]
 
-[logo]: /images/screenshot.jpg "screenshot of the super mario frogger game"
+[splash]: /images/screenshot-splash.jpg "splash sceen the super mario frogger game"
+[game]: /images/screenshot-game.jpg "game sceen the super mario frogger game"
 
 ## Installation
-Use the following command `git clone https://github.com/zakhttp/super-mario-frogger.git`.
+
+1. Clone the repository using the command:
+
+`$ git clone https://github.com/zakhttp/super-mario-frogger.git`
+
+2. Install NPM & Bower dependencies using the commands:
+
+`$ npm install`
+`$ bower install`
+
+3. Run the following command to build the game and serve it in the browser
+
+`$ gulp serve`
+
+### How to Play
+
+Use the keyboard arrow up/down/left/right to move Mario around the game bridges.
+
+You should collect as many coins as possible while trying to make it to the top bridge.
+
+Be careful Goombas are nasty, try to avoid them!
 
 Then open [the index ](https://github.com/zakhttp/super-mario-frogger/blob/super-mario/index.html) file in the browser.
 
@@ -17,9 +39,3 @@ The project uses an image loading and caching utility that can be found in [reso
 Please feel free to use it in case you find it useful in any of your projects, don't forget to star the repository.
 
 Cheers!
-
-
-================================================
-
-Engine:
-
