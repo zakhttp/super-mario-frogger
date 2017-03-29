@@ -4,8 +4,8 @@ This a reproduction of the 80's frogger game with a Super Mario Bros flavor.
 ![screenshot of the super mario frogger game][splash]
 ![screenshot of the super mario frogger game][game]
 
-[splash]: /images/screenshot-splash.jpg "splash sceen the super mario frogger game"
-[game]: /images/screenshot-game.jpg "game sceen the super mario frogger game"
+[splash]: /src/images/screenshot-splash.jpg "splash sceen the super mario frogger game"
+[game]: /src/images/screenshot-game.jpg "game sceen the super mario frogger game"
 
 ## Installation
 
