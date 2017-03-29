@@ -48,6 +48,8 @@ var config = (function () {
         // Images assets of the game
         assets: [
             'images/splash.jpg',
+            'images/victory.jpg',
+            'images/game-over.jpg',
             'images/plain-sky-block.png',
             'images/sky-block.png',
             'images/bridge-block.png',
@@ -74,6 +76,10 @@ var config = (function () {
         },
         // Splashscreen background image
         splashScreen: 'images/splash.jpg',
+        // Splashscreen background image
+        victoryScreen: 'images/victory.jpg',
+        // gameOver background image
+        gameOverScreen: 'images/game-over.jpg',
         // Modal configuration object
         infoModal: {
             bg: {
