@@ -42,7 +42,7 @@ var engine = (function (config) {
         var now = Date.now();
         // 2. Calculate delta of time to allow smooth animation between
         // the previous frame and the next one.
-        var dt = (now - lastTime) / 1000.0;
+        var dt = (now - lastTime) / 2500.0;
         // 3. Update positions of the game entities
         update(dt);
         // 4. Render the game board & game entities
@@ -67,9 +67,38 @@ var engine = (function (config) {
         allClouds.forEach(function(cloud) {
             cloud.update(dt, $.bounds);
         });
+        monitorCollisions();
 
     }
 
+    function monitorCollisions () {
+        allEnemies.forEach(function(enemy) {
+            if (hasCollided(player, enemy)) {
+                // Send the player to the predefined bottom bound in case of collision with an enemy
+                player.y = $.bounds.bottom;
+            }
+        });
+        allCoins.forEach(function(coin) {
+            if (hasCollided(player, coin)) {
+                // Remove the coin object froom the coins array in case of collision with the player
+                allCoins.splice(allCoins.indexOf(coin), 1);
+                //
+                dash.coins++;
+                // Increment with 100 the score value of the game board
+                dash.score += 100;
+            }
+        });
+    }
+
+    function hasCollided(player, entity) {
+        var collided = false;
+        if (Math.abs(player.x - entity.x) < $.collisionTolerance.x) {
+            if (Math.abs(player.y - entity.y) < $.collisionTolerance.y) {
+                collided = true;
+            }
+        }
+        return collided;
+    }
 
     /**
      * @description  Render the game board & game entities
@@ -89,6 +118,8 @@ var engine = (function (config) {
             enemy.render(context);
         });
         player.render(context); // TODO define entities and playe container
+
+        dash.render(context);
 
     }
 
@@ -157,13 +188,45 @@ var engine = (function (config) {
     }
 
     /**
+     * @description               Displays the victory screen of the game
+     * @param  {object}  context  The context oof the game board canvas
+     */
+    function showVictoryscreen() {
+
+        var victoryScreen = new InfoModal(
+            config.victoryScreen,
+            config.infoModal,
+            init
+        );
+        victoryScreen.render(context);
+
+    }
+
+    /**
+     * @description               Displays the game over screen of the game
+     * @param  {object}  context  The context oof the game board canvas
+     */
+    function showGameOverscreen(context) {
+
+        var gameOverScreen = new InfoModal(
+            config.gameOverScreen,
+            config.infoModal,
+            init
+        );
+        gameOverScreen.render(context);
+
+    }
+
+    /**
      * Public API of the engine
      * @type {Object}
      */
     var engine = {
 
         start: start,
-        context: context
+        context: context,
+        victory: showVictoryscreen,
+        gameOver: showGameOverscreen
 
     };
 
