@@ -2,6 +2,7 @@
 
 /**
  * @description                Collectibles the player should collect
+ * @constructor
  * @param {number}  x          Horizonal position
  * @param {Number}  y          Vertical position
  * @param {[type]}  colWidth   Width of each column of the game board

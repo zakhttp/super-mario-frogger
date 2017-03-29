@@ -54,6 +54,7 @@
 
 /**
  * @description                  Creates a modal to display informations
+ * @constructor
  * @param {string}  bg            Path of the background image
  * @param {object}  config        Object containing the settings of the modal
  * @param {object}  nextCallback  Function to call when the user presses a key

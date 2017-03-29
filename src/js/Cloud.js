@@ -2,6 +2,7 @@
 
 /**
  * @description                 Clouds class
+ * @constructor
  * @param {number}  x           Horizontal position of the cloud
  * @param {number}  y           Vertical position of the cloud
  * @param {number}  speed       Speed of the cloud
