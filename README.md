@@ -1,6 +1,8 @@
 # Super Mario Frogger game
 This a reproduction of the 80's frogger game with a Super Mario Bros flavor.
 
+Check the demo (here)[http://zakhttp.github.io/super-mario-frogger/dist/].
+
 ![screenshot of the super mario frogger game][splash]
 ![screenshot of the super mario frogger game][game]
 
@@ -15,7 +17,7 @@ This a reproduction of the 80's frogger game with a Super Mario Bros flavor.
 
 2. Install NPM & Bower dependencies using the commands:
 
-`$ npm install && $ bower install`
+`$ npm install && bower install`
 
 3. Run the following command to build the game and serve it in the browser
 
