@@ -1,7 +1,7 @@
 # Super Mario Frogger game
 This a reproduction of the 80's frogger game with a Super Mario Bros flavor.
 
-Check the demo (here)[http://zakhttp.github.io/super-mario-frogger/dist/].
+Check the demo [here](http://zakhttp.github.io/super-mario-frogger/dist/).
 
 ![screenshot of the super mario frogger game][splash]
 ![screenshot of the super mario frogger game][game]
